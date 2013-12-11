@@ -22,9 +22,9 @@ args = parser.parse_args()
 f = fontforge.font()
 f.encoding = 'UnicodeFull'
 f.design_size = 16
-f.em = 512
-f.ascent = 448
-f.descent = 64
+f.em = 1024
+f.ascent = 896
+f.descent = 128
 
 m = hashlib.md5()
 cp = 0xf100
@@ -80,7 +80,7 @@ for dirname, dirnames, filenames in os.walk(args.input_dir):
 			files.append(name)
 			cp += 1
 
-		f.autoWidth(0, 0, 512)
+		f.autoWidth(0, 0, 1024)
 
 fontfile = args.output_dir + '/' + args.font
 if args.hashes:
